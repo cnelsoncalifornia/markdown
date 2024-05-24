@@ -7,19 +7,21 @@ class C(BaseConstants):
     NUM_ROUNDS = 2
     MAX = 20 # Maximum bid.
     NAMES = {
-        1: ['B', 'A'],  # First (highest) asset in market 1, second asset in market 2.
-        2: ['A', 'B'],
-    }
-
-    PAYOFFS = {
-        1: {'B': 10, 'A': 6},
-        2: {'A': 12, 'B': 8},
+        1: ['A', 'B'],  # First (highest) asset in round 1, first (highest) asset in round 2
+        2: ['C', 'N'],
     }
 
     PROJ_PAYOFF_3 = { # Projected payoffs in period 3.
-        1: {'B': 13, 'A': 7},
-        2: {'A': 11, 'B': 9},
+        1: {'A': 11, 'B': 9},
+        2: {'C': 13, 'N': 7},
     }
+
+    PAYOFFS = {
+        1: {'A': 10, 'B': 12},
+        2: {'C': 14, 'N': 4},
+    }
+
+
 
 
 
