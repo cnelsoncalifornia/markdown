@@ -1,0 +1,50 @@
+{{ block title }} Asset Market{{ endblock }}
+{{ block content }}
+
+    <p>
+        For now, only 6 of the 10 periods are revealed.
+    </p>
+
+    <p>
+
+        Each asset has an equal chance of moving up 1 and down 1 each period.
+
+    </p>
+
+
+    <img src="{{ static image_path1 }}"/>   <br> <br>
+
+    <img src="{{ static image_path2 }}"/>   <br> <br>
+
+    <p>
+        You will answer questions about the two highlighted assets.
+    </p>
+
+
+    <p>
+        Give your best guess for the final payoff in Period 10 for asset {{ player.asset_6 }} (+1 if your guess is exactly correct):
+    </p>
+        {{ formfield 'guess_6'}}
+
+    <p>
+        Give your best guess for the final payoff in Period 10 for asset {{ player.asset_6_2 }} (+1 if your guess is exactly correct):
+    </p>
+        {{ formfield 'guess_6_2'}}
+
+    <p>
+        What is the highest price you are willing to pay for one unit of asset {{ player.asset_6 }}?
+    </p>
+    {{ formfield 'bid_6' }}
+
+
+   <p>
+        What is the highest price you are willing to pay for one unit of asset {{ player.asset_6_2 }}?
+    </p>
+    {{ formfield 'bid_6_2' }}
+
+
+
+
+    {{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,36 @@
+{{ block title }}Directions{{ endblock }}
+
+    {{ block content }}
+
+    <p>
+
+    Please read these directions carefully.  There will be a quiz on them before you start the experiment.
+<br><br>
+    Welcome to this experiment!  In each round, you can earn experimental currency.  We will convert your experimental currency into US dollars at the end of the experiment.
+<br><br>
+    Each round will present you with a new selection of assets.  You can make offers (bids) to purchase some of these assets.
+<br><br>
+    You can earn experimental currency by buying assets that have payoffs higher than the price you paid.  The payoffs are revealed in period 10, which is the final period of the round.  You will have the opportunity to bid on assets either after period 3 or after period 6.
+<br><br>
+    You can also earn currency by correctly guessing the asset payoffs ahead of time.  Guesses done after period 3 only need to be within 1 of the final payoff.  Guesses done after period 6 need to match the payoff exactly.
+<br><br>
+    The maximum final payoff of any asset is 20, and all your bids must be between 0 and 20.  You are to bid the maximum price you are willing to pay.  Then a random whole number will be drawn.  If the number is less than or equal to your bid, you will acquire the asset at a price equal to the random number.
+<br><br>
+    For example, suppose the random number is 7.  You don't acquire the asset if you bid any number below 7.  However, if you bid any number above 7, you acquire the asset at the price of 7.  This process gives you the incentive to state your actual maximum price.
+<br><br>
+    Every asset in every round has an equal chance of increasing by 1 and decreasing by 1 each period.
+<br><br>
+    This means that each asset has a 50% chance of increasing in the next period and a 50% chance of decreasing in the next period, regardless of its past performance.  
+<br><br>
+    The performance of any given asset has no influence on the performance of any other asset.  
+<br><br>
+    At the end of all rounds, we will convert your cumulative earnings from experimental currency to US dollars, and you will be paid that amount in cash before exiting.  Each experimental currency unit is worth $0.15.  If your earnings are below $4 for each 15 minutes worked, we will pay you $4 for each 15 mintues worked.
+<br><br>
+    The first two rounds will be practice rounds.  You cannot earn or lose any money in these rounds.  Any points you might have earned or lost in the practice rounds is forgotten by the program.
+<br><br>
+    Please press next to take the test on these directions.
+<br><br>
+    </p>
+    {{ next_button }}
+
+{{ endblock }}
