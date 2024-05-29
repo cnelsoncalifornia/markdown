@@ -12,8 +12,7 @@ class C(BaseConstants):
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
     CONVERSION_TO_USD = 0.15
-    EARNINGS_FOR_CORRECT_PROB = 5
-    MARGIN_OF_ERROR = 0 #How much probability guesses can differ from the actual probability and still get rewarded.
+    PARTICIPATION_EARNINGS = 7
 
 
 class Subsession(BaseSubsession):
@@ -25,8 +24,9 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    total_earnings = models.IntegerField(initial=0)
-    total_earnings_usd = models.FloatField(initial=0)
+    earnings_from_experimental_currency = models.IntegerField(initial=0)
+    earnings_from_experimental_currency_usd = models.FloatField(initial=0)
+    total_payment = models.FloatField(initial=0)
 
 
     first_participation = models.StringField(   # This variable use to be called previous_participation
@@ -69,9 +69,11 @@ class final_instructions(Page):
     @staticmethod
     def vars_for_template(player: Player):
 
-        player.total_earnings = player.participant.vars['cummulative_earnings'] 
+        player.earnings_from_experimental_currency = player.participant.vars['cummulative_earnings'] 
 
-        player.total_earnings_usd = player.total_earnings * C.CONVERSION_TO_USD
+        player.earnings_from_experimental_currency_usd = player.earnings_from_experimental_currency * C.CONVERSION_TO_USD
+
+        player.total_payment = player.earnings_from_experimental_currency_usd + C.PARTICIPATION_EARNINGS
 
   
 

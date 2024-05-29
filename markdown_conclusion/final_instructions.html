@@ -4,11 +4,15 @@
 
     <p> Thank you for participating in this experiment! </p>
 
-    <p> Your total earnings for this experiment are {{ player.total_earnings}}.</p>
+    <p> Your experimental currency earnings for this experiment are {{ player.earnings_from_experimental_currency}}.</p>
 
     <p> Each experimental currency unit is worth ${{ C.CONVERSION_TO_USD }}. </p>
 
-    <p> Your final payment is ${{ player.total_earnings_usd }} or $4 for each 15 mintues you participated, whichever is greater.  </p>
+    <p> Therefore, your payment for your experimental currency earnings is ${{ player.earnings_from_experimental_currency_usd }}.  </p>
+
+    <p> Additionally, you earned ${{ C.PARTICIPATION_EARNINGS }} for participating.</p>
+
+    <p> Your payment is therefore ${{ player.total_payment }}. </p>
 
     <p> Please let the administrator know that you are done and are ready to collect your payment. </p>
 

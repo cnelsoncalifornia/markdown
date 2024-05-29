@@ -53,6 +53,17 @@ class Player(BasePlayer):
         label='True or False: The payoff of any asset is unknown until the 10th period of the round.',
         widget=widgets.RadioSelect,
     )
+    payment_question = models.StringField(
+        choices=[['True', 'True'], ['False', 'False']],
+        label='True or False: Your payment for this experiment will be $7 plus whatever you earn during this experiment.',
+        widget=widgets.RadioSelect,
+    )
+    negative_earnings_question = models.StringField(
+        choices=[['True', 'True'], ['False', 'False']],
+        label='True or False: Negative earnings cannot decrease your payment.',
+        widget=widgets.RadioSelect,
+    )
+
 
 
 class Directions(Page):
@@ -61,14 +72,15 @@ class Directions(Page):
 
 class MyPage(Page):
     form_model = 'player'
-    form_fields = ['independent', 'bid_question1', 'bid_question2', 'prob_question1', 'prob_question2', 'payoff_question']
+    form_fields = ['independent', 'bid_question1', 'bid_question2', 'prob_question1', 'prob_question2', 'payoff_question', 
+                   'payment_question', 'negative_earnings_question']
 
     @staticmethod
     def error_message(player: Player, values):
         # alternatively, you could make quiz1_error_message, quiz2_error_message, etc.
         # but if you have many similar fields, this is more efficient.
         solutions = dict(independent='No', bid_question1=11, bid_question2='No', prob_question1=50, prob_question2=50,
-                         payoff_question='True')
+                         payoff_question='True', payment_question = 'True', negative_earnings_question = 'False')
 
         # error_message can return a dict whose keys are field names and whose
         # values are error messages
